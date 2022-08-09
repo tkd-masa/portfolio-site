@@ -46,8 +46,12 @@
                         <div v-html="val.comment"></div> 
                     </div>
                     <div class="site_link">
-                        <h3>Link</h3>
+                        <h3>サイトのリンク</h3>
                         <p><a :href="val.link" target="_blank" rel="noopener noreferrer">{{ val.title }}</a></p>
+                    </div>
+                    <div class="source_link">
+                        <h3>ソースコードのリンク</h3>
+                        <p><a :href="val.source_link" target="_blank" rel="noopener noreferrer">GitHubでソースコードを確認</a></p>
                     </div>
                     <div class="bottom_close" @click="$emit('close',$event)">CLOSE</div>
                 </div><!-- /modal_detail -->
@@ -181,7 +185,7 @@ export default {
         text-align: justify;
     }
 
-    .site_link a{
+    .site_link a, .source_link a {
         border-bottom: 1px solid #000;
         font-style: italic;
         color: blue;
