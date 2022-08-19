@@ -1,6 +1,6 @@
 # 「Masahiro Takeda ポートフォリオ」のソースコード
 
-##サイトのURL
+## サイトのURL
 https://ikb-404.com/takeda/portfolio/
 
 ## Project setup
