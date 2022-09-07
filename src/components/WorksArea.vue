@@ -53,6 +53,12 @@ export default {
                     desc:'職業訓練校卒業後に自分の作品についてまとめるために作成。今ご覧になっているサイトです。<br>JavaScriptのフレームワーク「Vue.js」を用いて作成しました。',
                     img_src: require('../assets/img/works_img4.jpg')
                 },
+                {
+                    id:5,
+                    title:'No.5 <br>技術者ブログ',
+                    desc:'普段学んだ技術について備忘録としてまとめるために作成。フロントエンドの技術であるreact/next.jsを用いて作成いたしました。',
+                    img_src: require('../assets/img/works_img5.jpg')
+                },
                 
             ],
             postItem:"",
@@ -124,6 +130,22 @@ export default {
                     source_link: "https://github.com/tkd-masa/portfolio-site",
                     img_src: require('../assets/img/modal_img4.jpg'),
                     img_src_pc: require('../assets/img/modal_img4_pc.png'),
+                },
+                {
+                    id:5,   
+                    title:'技術者ブログ「takeLog」',
+                    phase:'企画/設計/デザイン/コーディング',
+                    time:'17日(職業訓練校卒業後)',
+                    tool:'HTML/CSS/React/Next.js/TypeScript<br>microCMS/Vercel/illustrator',
+                    platform:'SP/iPad/PC',
+                    concept:'<p>普段自分が学んだ新しい知識について、まとめるための技術者ブログを作成しました。</p><p>作成した目的は2点ございます。<br>1つ目はフロントエンドの技術であるreact/next.jsのアウトプットを図り、技術力を向上させることです。<br>2つ目は普段学んだ知識について忘れないように備忘録として残し、共有できるようにすることです。</p>',
+                    design: '<p>サイトのデザインは、ベースカラーに明るい色合いのシアン色、メインカラーに白と黒を用いて作成しました。</p><p>記事の一覧はcssのgridを用いてスマホページでは1列、pcでは2列になるように配置を施しました。</p>',
+                    point:'<p>microCMSというヘッドレスCMSを使用して記事の投稿内容を取得し、表示させるようにしました。</p><p>Next.jsのSSGというビルド時にHTMLファイルを作成する技術を用いることで、リクエストのレスポンスを高速化しました。</p><p>VercelというWebホスティングサービスを利用し、GitHubのリポジトリと連携させてビルドとデプロイを行いました。</p>',
+                    comment:'<p>フロントエンドの技術であるreact/Next.jsの勉強を兼ねて、学んだ技術を共有できるように技術者ブログを作成しました。</p><p>TypeScriptを導入して作成したので、型のエラーが出た際に自分で調べながら解決していく作業が一番苦労しました。</p><p>ブログは初心者なので、わかりやすく相手に伝える記事を書く力を他の技術者ブログを参考にしながら向上させていけたらと考えています。</p>',
+                    link:'https://takelog.vercel.app/',
+                    source_link: "https://github.com/tkd-masa/blog",
+                    img_src: require('../assets/img/modal_img5.jpg'),
+                    img_src_pc: require('../assets/img/modal_img5_pc.png'),
                 },
             ]
         }
