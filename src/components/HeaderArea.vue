@@ -1,57 +1,51 @@
+<script lang="ts" setup>
+import { ref } from 'vue'
+const open = ref<boolean>(false)
+const items: { id: number; link: string; itemName: string }[] = [
+  {
+    id: 1,
+    link: '#page_top',
+    itemName: 'TOP',
+  },
+  {
+    id: 2,
+    link: '#about',
+    itemName: 'ABOUT',
+  },
+  {
+    id: 3,
+    link: '#works',
+    itemName: 'WORKS',
+  },
+  {
+    id: 4,
+    link: '#skills',
+    itemName: 'SKILLS',
+  },
+]
+</script>
+
 <template>
   <header class="header">
     <div class="header_inner">
       <div class="head_fix">
         <!--ハンバーガーメニュー-->
-        <div class="nav_btn" v-on:click="open = !open" v-bind:class="{ is_active: open }">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="nav_btn" :class="{ is_active: open }" @click="open = !open">
+          <span />
+          <span />
+          <span />
         </div>
       </div>
-      <nav class="header_nav" v-bind:class="{ is_active: open }">
+      <nav class="header_nav" :class="{ is_active: open }">
         <ul class="header_nav_list">
-          <li class="header_nav_item" v-for="item in items" :key="item.id">
-            <a v-scroll-to="item.link" class="header_nav_item_link" v-on:click="open = false">{{ item.itemName }}</a>
+          <li v-for="item in items" :key="item.id" class="header_nav_item">
+            <a v-scroll-to="item.link" class="header_nav_item_link" @click="open = false">{{ item.itemName }}</a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 </template>
-
-<script>
-export default {
-  name: 'HeaderArea',
-  data() {
-    return {
-      open: false,
-      items: [
-        {
-          id: 1,
-          link: '#page_top',
-          itemName: 'TOP',
-        },
-        {
-          id: 2,
-          link: '#about',
-          itemName: 'ABOUT',
-        },
-        {
-          id: 3,
-          link: '#works',
-          itemName: 'WORKS',
-        },
-        {
-          id: 4,
-          link: '#skills',
-          itemName: 'SKILLS',
-        },
-      ],
-    }
-  },
-}
-</script>
 
 <style scoped>
 .header_inner {

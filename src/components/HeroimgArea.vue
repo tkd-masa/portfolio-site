@@ -1,40 +1,44 @@
 <template>
-  <div class="big_bg" id="page_top">
-    <h1 class="keyvisual_title">Masahiro&nbsp;Takeda<br />Portfolio</h1>
+  <div id="page_top" class="big_bg">
+    <h1 class="keyvisual_title">
+      Masahiro&nbsp;Takeda<br />Portfolio
+    </h1>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HeroimgArea',
-  mounted() {
-    //初回ロード時に3秒間スクロールを止める処理
-    //App.vueのstopScrollを実行
-    this.$stopScroll()
-    //3秒後にスクロール固定を解除
-    setTimeout(() => {
-      this.$openScroll()
-    }, 3000)
+<script lang="ts" setup>
+import { onMounted, inject } from 'vue'
+import { stopScroll, openScroll} from '../noScroll'
+onMounted(() => {
+  //初回ロード時に3秒間スクロールを止める処理
+  //App.vueのstopScrollを実行
+  stopScroll()
+  //3秒後にスクロール固定を解除
+  setTimeout(() => {
+    openScroll()
+  }, 3000)
 
-    //対象の要素に対してspanタグを適用
-    const keyTitle = document.querySelectorAll('.keyvisual_title')
-    keyTitle.forEach((el) => (el.innerHTML = this.wrapCharSpan(el.textContent.trim())))
-    const titDiv = document.querySelectorAll('.keyvisual_title div')
-    const titSpan = document.querySelectorAll('.keyvisual_title span')
-    titDiv[14].insertAdjacentHTML('afterend', '<br>') //keyviusal_titleの中の「Takeda」の後ろに改行コードを入れる処理
-    for (let i = 0; i < titSpan.length; i++) {
-      titSpan[i].style.transitionDelay = i * 0.06 + 's' //一文字ずつtransition-delayを付加する
+  //対象の要素に対してspanタグを適用
+  const keyTitle = document.querySelectorAll<HTMLElement>('.keyvisual_title')
+  keyTitle.forEach((el) => {
+    if (typeof el.textContent === 'string') {
+      el.innerHTML = wrapCharSpan(el.textContent.trim())
     }
-    //heroイメージの文字を出現させる
-    setTimeout(() => {
-      keyTitle[0].classList.add('is_ani')
-    }, 1000)
-  },
-  methods: {
-    wrapCharSpan(str) {
-      return [...str].map((char) => `<div><span>${char}</span></div>`).join('')
-    },
-  },
+  })
+  const titDiv = document.querySelectorAll<HTMLElement>('.keyvisual_title div')
+  const titSpan = document.querySelectorAll<HTMLElement>('.keyvisual_title span')
+  titDiv[14].insertAdjacentHTML('afterend', '<br>') //keyviusal_titleの中の「Takeda」の後ろに改行コードを入れる処理
+  for (let i = 0; i < titSpan.length; i++) {
+    titSpan[i].style.transitionDelay = i * 0.06 + 's' //一文字ずつtransition-delayを付加する
+  }
+  //heroイメージの文字を出現させる
+  setTimeout(() => {
+    keyTitle[0].classList.add('is_ani')
+  }, 1000)
+})
+
+function wrapCharSpan(str: string): string {
+  return [...str].map((char) => `<div><span>${char}</span></div>`).join('')
 }
 </script>
 

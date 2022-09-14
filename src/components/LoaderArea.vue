@@ -1,17 +1,17 @@
 <template>
   <div class="loader_wrap">
-    <div class="loader">Loading...</div>
+    <div class="loader">
+      Loading...
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LoaderArea',
-  mounted() {
-    const loaderWrap = document.querySelector('.loader_wrap')
-    loaderWrap.classList.add('completed')
-  },
-}
+<script lang="ts" setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  const loaderWrap = document.querySelector('.loader_wrap')
+  loaderWrap?.classList.add('completed')
+})
 </script>
 
 <style scoped>

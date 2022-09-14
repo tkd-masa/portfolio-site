@@ -2,8 +2,10 @@
   <div class="modal" @click="$emit('close', $event)">
     <div class="modal_content">
       <div class="modal_wrapper">
-        <div class="modal_close" @click="$emit('close', $event)">×</div>
-        <picture class="modal_img" ref="modal_img" v-bind:style="{ transform: this.imgSize }">
+        <div class="modal_close" @click="$emit('close', $event)">
+          ×
+        </div>
+        <picture ref="modal_img" class="modal_img" :style="{ transform: imgSize }">
           <source :srcset="val.img_src_pc" media="(min-width: 1024px) and (orientation : landscape)" />
           <!-- 幅1024px以上なら表示 -->
           <img :src="val.img_src" alt="" />
@@ -14,39 +16,39 @@
           </div>
           <div class="role">
             <h3>担当フェーズ</h3>
-            <p v-html="val.phase"></p>
+            <p v-html="val.phase" />
           </div>
           <div class="duration">
             <h3>制作時間</h3>
-            <p v-html="val.time"></p>
+            <p v-html="val.time" />
           </div>
           <div class="tool">
             <h3>使用ツール</h3>
-            <p v-html="val.tool"></p>
+            <p v-html="val.tool" />
           </div>
           <div class="platform">
             <h3>対応機種</h3>
-            <p v-html="val.platform"></p>
+            <p v-html="val.platform" />
           </div>
           <div class="concept">
             <h3>コンセプト</h3>
-            <div v-html="val.concept"></div>
+            <div v-html="val.concept" />
           </div>
-          <div class="target" v-show="val.target">
+          <div v-show="val.target" class="target">
             <h3>ターゲット</h3>
-            <div v-html="val.target"></div>
+            <div v-html="val.target" />
           </div>
           <div class="design">
             <h3>デザイン</h3>
-            <div v-html="val.design"></div>
+            <div v-html="val.design" />
           </div>
           <div class="point">
             <h3>工夫点</h3>
-            <div v-html="val.point"></div>
+            <div v-html="val.point" />
           </div>
           <div class="comment">
             <h3>コメント</h3>
-            <div v-html="val.comment"></div>
+            <div v-html="val.comment" />
           </div>
           <div class="site_link">
             <h3>サイトのリンク</h3>
@@ -58,7 +60,9 @@
             <h3>ソースコードのリンク</h3>
             <p><a :href="val.source_link" target="_blank" rel="noopener noreferrer">GitHubでソースコードを確認</a></p>
           </div>
-          <div class="bottom_close" @click="$emit('close', $event)">CLOSE</div>
+          <div class="bottom_close" @click="$emit('close', $event)">
+            CLOSE
+          </div>
         </div>
         <!-- /modal_detail -->
       </div>
@@ -69,16 +73,24 @@
   <!-- /modal -->
 </template>
 
-<script>
-export default {
-  name: 'ModalArea',
-  props: ['val'],
-  data() {
-    return {
-      imgSize: '',
-    }
-  },
-}
+<script lang="ts" setup>
+const props = defineProps({
+  val: {
+    type: Object,
+    required: true
+  }
+})
+    defineEmits<{
+    (e: "close", name: string): void
+}>()
+const imgSize = ''
+//   props: ['val'],
+//   data() {
+//     return {
+//       imgSize: '',
+//     }
+//   },
+// }
 </script>
 
 <style scoped>
