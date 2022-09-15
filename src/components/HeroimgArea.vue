@@ -1,17 +1,10 @@
-<template>
-  <div id="page_top" class="big_bg">
-    <h1 class="keyvisual_title">
-      Masahiro&nbsp;Takeda<br />Portfolio
-    </h1>
-  </div>
-</template>
-
 <script lang="ts" setup>
-import { onMounted, inject } from 'vue'
-import { stopScroll, openScroll} from '../noScroll'
+import { onMounted } from 'vue'
+import { stopScroll, openScroll } from '@/lib/noScroll'
+import { wrapCharSpan } from '@/lib/wrapCharSpan'
+
 onMounted(() => {
   //初回ロード時に3秒間スクロールを止める処理
-  //App.vueのstopScrollを実行
   stopScroll()
   //3秒後にスクロール固定を解除
   setTimeout(() => {
@@ -25,32 +18,35 @@ onMounted(() => {
       el.innerHTML = wrapCharSpan(el.textContent.trim())
     }
   })
+
+  //タイトルの「Takeda」の後ろに改行コードを入れる処理
   const titDiv = document.querySelectorAll<HTMLElement>('.keyvisual_title div')
+  titDiv[14].insertAdjacentHTML('afterend', '<br>')
+
+  //タイトルに一文字ずつtransition-delayを付加する
   const titSpan = document.querySelectorAll<HTMLElement>('.keyvisual_title span')
-  titDiv[14].insertAdjacentHTML('afterend', '<br>') //keyviusal_titleの中の「Takeda」の後ろに改行コードを入れる処理
-  for (let i = 0; i < titSpan.length; i++) {
-    titSpan[i].style.transitionDelay = i * 0.06 + 's' //一文字ずつtransition-delayを付加する
-  }
+  titSpan.forEach((el, index) => {
+    el.style.transitionDelay = index * 0.06 + 's'
+  })
+
   //heroイメージの文字を出現させる
   setTimeout(() => {
     keyTitle[0].classList.add('is_ani')
   }, 1000)
 })
-
-function wrapCharSpan(str: string): string {
-  return [...str].map((char) => `<div><span>${char}</span></div>`).join('')
-}
 </script>
+
+<template>
+  <div id="page_top" class="big_bg">
+    <h1 class="keyvisual_title">
+      Masahiro&nbsp;Takeda<br />Portfolio
+    </h1>
+  </div>
+</template>
 
 <style scoped>
 .big_bg {
-  /* background-image: url(../assets/img/hero_img.jpg); */
   height: 100vh;
-  /* background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        margin-bottom: 40px;
-        position: relative; */
 }
 
 .big_bg::before {

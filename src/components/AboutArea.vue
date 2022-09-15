@@ -1,36 +1,38 @@
 <script lang="ts" setup>
-  const items: {
-    id: number
-    img_src: string
-    title: string
-    desc: string
-  }[] = [
-    {
-      id: 1,
-      img_src: require('../assets/img/fav_icon1.png'),
-      title: 'バスケットボール',
-      desc: '中学、高校で6年間バスケットボール部に所属していました。アメリカのプロバスケットボールリーグ「NBA」が大好きです。大学生の時にロサンゼルス、トロントで観戦したことがあります。',
-    },
-    {
-      id: 2,
-      img_src: require('../assets/img/fav_icon2.png'),
-      title: 'バイク',
-      desc: '2年前にホンダの「モンキー125」というバイクを購入以来、休日にふらっと乗ることが楽しみになりました。身近にツーリング仲間がいないことが最近の悩みです。',
-    },
-    {
-      id: 3,
-      img_src: require('../assets/img/fav_icon3.png'),
-      title: '映画鑑賞',
-      desc: '休日に家で映画を鑑賞することが至福のひと時です。キアヌ・リーヴスが出演している「スピード」、「ジョンウィック」というアクション映画がお気に入りです。',
-    },
-    {
-      id: 4,
-      img_src: require('../assets/img/fav_icon4.png'),
-      title: 'PCゲーム',
-      desc: '休日に気分転換としてPCゲームを遊ぶのが好きです。最近は「APEX」と「DEAD BY DAYLIGHT」というゲームを夢中で遊んでいます。',
-    },
-  ]
-  </script>
+type Items = {
+  id: number
+  img_src: string
+  title: string
+  desc: string
+}
+
+const items: Items[] = [
+  {
+    id: 1,
+    img_src: require('../assets/img/fav_icon1.png'),
+    title: 'バスケットボール',
+    desc: '中学、高校で6年間バスケットボール部に所属していました。アメリカのプロバスケットボールリーグ「NBA」が大好きです。大学生の時にロサンゼルス、トロントで観戦したことがあります。',
+  },
+  {
+    id: 2,
+    img_src: require('../assets/img/fav_icon2.png'),
+    title: 'バイク',
+    desc: '2年前にホンダの「モンキー125」というバイクを購入以来、休日にふらっと乗ることが楽しみになりました。身近にツーリング仲間がいないことが最近の悩みです。',
+  },
+  {
+    id: 3,
+    img_src: require('../assets/img/fav_icon3.png'),
+    title: '映画鑑賞',
+    desc: '休日に家で映画を鑑賞することが至福のひと時です。キアヌ・リーヴスが出演している「スピード」、「ジョンウィック」というアクション映画がお気に入りです。',
+  },
+  {
+    id: 4,
+    img_src: require('../assets/img/fav_icon4.png'),
+    title: 'PCゲーム',
+    desc: '休日に気分転換としてPCゲームを遊ぶのが好きです。最近は「APEX」と「DEAD BY DAYLIGHT」というゲームを夢中で遊んでいます。',
+  },
+]
+</script>
 
 <template>
   <div id="about" class="about_area">

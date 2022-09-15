@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+defineProps<{
+  val: object | string
+}>()
+
+defineEmits<{
+  (e: 'close', name: string): void
+}>()
+</script>
+
 <template>
   <div class="modal" @click="$emit('close', $event)">
     <div class="modal_content">
@@ -5,7 +15,7 @@
         <div class="modal_close" @click="$emit('close', $event)">
           ×
         </div>
-        <picture ref="modal_img" class="modal_img" :style="{ transform: imgSize }">
+        <picture ref="modal_img" class="modal_img">
           <source :srcset="val.img_src_pc" media="(min-width: 1024px) and (orientation : landscape)" />
           <!-- 幅1024px以上なら表示 -->
           <img :src="val.img_src" alt="" />
@@ -72,26 +82,6 @@
   </div>
   <!-- /modal -->
 </template>
-
-<script lang="ts" setup>
-const props = defineProps({
-  val: {
-    type: Object,
-    required: true
-  }
-})
-    defineEmits<{
-    (e: "close", name: string): void
-}>()
-const imgSize = ''
-//   props: ['val'],
-//   data() {
-//     return {
-//       imgSize: '',
-//     }
-//   },
-// }
-</script>
 
 <style scoped>
 .modal {

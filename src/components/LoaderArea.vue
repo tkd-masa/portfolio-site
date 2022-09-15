@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const loaderWrap = document.querySelector('.loader_wrap')
+  loaderWrap?.classList.add('completed')
+})
+</script>
+
 <template>
   <div class="loader_wrap">
     <div class="loader">
@@ -5,14 +14,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { onMounted } from 'vue'
-onMounted(() => {
-  const loaderWrap = document.querySelector('.loader_wrap')
-  loaderWrap?.classList.add('completed')
-})
-</script>
 
 <style scoped>
 .loader_wrap {
