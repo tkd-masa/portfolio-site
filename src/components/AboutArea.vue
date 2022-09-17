@@ -54,8 +54,7 @@ const items: Items[] = [
           </div>
           <p>
             大学卒業後、IT企業のエンジニアとして就職。電通国際情報サービスにて某金融企業の為替取引システムを扱うプロジェクトの保守作業に約1年半参画。
-            このプロジェクトにて、Linux系のサーバーで使われる「シェルスクリプト」と<span>エクセル</span>で使われる「VBA」の<span>2つ</span>の<span>プログラミング</span>言語を
-            <span>経験。</span>
+            このプロジェクトにて、Linux系のサーバーで使われる「シェルスクリプト」と<span>エクセル</span>で使われる「VBA」の<span>2つ</span>の<span>プログラミング</span>言語を<span>経験。</span>
           </p>
           <p>
             JavaScriptとウェブ制作におけるUIデザインに現在興味があり、フロントエンドエンジニアとしての業務に挑戦するため、<span>2022年</span><span>1月</span>に退職。その後求職者支援訓練の「webクリエイター養成科」にて<span>3か月間</span>、HTML、CSS、illustrator、photoshopを学習。
