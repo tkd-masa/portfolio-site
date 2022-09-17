@@ -64,7 +64,7 @@ const worksLists: WorksLists[] = [
   {
     id: 5,
     title: 'No.5 <br>技術者ブログ',
-    desc: '普段学んだ技術について備忘録としてまとめるために作成。フロントエンドの技術であるreact/next.jsを用いて作成いたしました。',
+    desc: '普段学んだ技術について備忘録としてまとめるために作成。フロントエンドの技術であるReact/Next.jsを用いて作成いたしました。',
     img_src: require('../assets/img/works_img5.jpg'),
   },
 ]
