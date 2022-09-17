@@ -48,6 +48,12 @@ const items: { id: number; title: string; desc: string; img_src: string }[] = [
     desc: '入門書を1冊読みながら、文法の理解に努めました。データ型を使用した変数、配列、メソッドの使い方についての理解があります。',
     img_src: require('../assets/img/ts_icon.png'),
   },
+  {
+    id: 9,
+    title: 'React',
+    desc: 'JSXを使ったコーディングをブログ作成を通して学びました。Next.jsを組み合わせたSSGでのWebサイト作成についても理解があります。',
+    img_src: require('../assets/img/react_icon.png'),
+  }
 ]
 </script>
 
