@@ -12,9 +12,7 @@ defineEmits<{
   <div class="modal" @click="$emit('close', $event)">
     <div class="modal_content">
       <div class="modal_wrapper">
-        <div class="modal_close" @click="$emit('close', $event)">
-          ×
-        </div>
+        <div class="modal_close" @click="$emit('close', $event)">×</div>
         <picture ref="modal_img" class="modal_img">
           <source :srcset="val.img_src_pc" media="(min-width: 1024px) and (orientation : landscape)" />
           <!-- 幅1024px以上なら表示 -->
@@ -70,9 +68,7 @@ defineEmits<{
             <h3>ソースコードのリンク</h3>
             <p><a :href="val.source_link" target="_blank" rel="noopener noreferrer">GitHubでソースコードを確認</a></p>
           </div>
-          <div class="bottom_close" @click="$emit('close', $event)">
-            CLOSE
-          </div>
+          <div class="bottom_close" @click="$emit('close', $event)">CLOSE</div>
         </div>
         <!-- /modal_detail -->
       </div>
