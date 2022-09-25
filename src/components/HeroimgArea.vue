@@ -38,9 +38,7 @@ onMounted(() => {
 
 <template>
   <div id="page_top" class="big_bg">
-    <h1 class="keyvisual_title">
-      Masahiro&nbsp;Takeda<br />Portfolio
-    </h1>
+    <h1 class="keyvisual_title">Masahiro&nbsp;Takeda<br />Portfolio</h1>
   </div>
 </template>
 

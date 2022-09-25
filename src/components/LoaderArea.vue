@@ -9,9 +9,7 @@ onMounted(() => {
 
 <template>
   <div class="loader_wrap">
-    <div class="loader">
-      Loading...
-    </div>
+    <div class="loader">Loading...</div>
   </div>
 </template>
 

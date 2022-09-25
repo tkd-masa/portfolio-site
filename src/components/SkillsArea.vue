@@ -59,7 +59,7 @@ const items: { id: number; title: string; desc: string; img_src: string }[] = [
     title: 'Git',
     desc: 'CUIを使って、ステージエリアにファイルを追加、ブランチの作成、コミット、GitHubへプッシュなどの基本コマンドを操作することができます。',
     img_src: require('../assets/img/git_icon.png'),
-  }
+  },
 ]
 </script>
 
